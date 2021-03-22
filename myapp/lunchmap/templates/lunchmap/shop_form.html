@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+{% block content %}
+
+<h1>店家的情報{{ object|yesno:'更新,製作'}}</h1>
+
+<form action='' method='post'>{% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit' class='btn btn-outline-info'>{{ object|yesno:'更新,製作'}}</button>
+</form>
+<div>
+    <a href='JavaScript:history.back()'>&lt; 返回</a>
+</div>
+
+{% endblock %}
